@@ -97,9 +97,12 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
-
+	for idx = 1:size(vocabList)
+		if(strcmp(str,vocabList{idx}) == 1)
+			word_indices = [word_indices; idx];
+			break;
+		endif
+	end
 
 
 
@@ -109,7 +112,7 @@ while ~isempty(email_contents)
     % =============================================================
 
 
-    % Print to screen, ensuring that the output lines are not too long
+    % Print to screen, ensuring that the output lines are not too longVCsMtqd9KjlinauS
     if (l + length(str) + 1) > 78
         fprintf('\n');
         l = 0;
